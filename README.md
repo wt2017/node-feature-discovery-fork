@@ -1,3 +1,26 @@
+How to build docker image ?
+
+#1 add docker.io mirror
+❯ cat /etc/docker/daemon.json 
+{
+  "registry-mirrors": ["https://docker.1ms.run"]
+}
+sudo systemctl daemon-reload
+sudo systemctl restart docker 
+
+#2 update Dockerfile to add golang proxy in cn -> git diff Dockerfile
+
+#3 make build
+
+#4 docker build -t registry.k8s.io/nfd/node-feature-discovery:v0.18.2 .
+
+
+Build shall be succeeded !
+
+
+
+
+
 # Node Feature Discovery
 
 [![Go Report Card](https://goreportcard.com/badge/sigs.k8s.io/node-feature-discovery)](https://goreportcard.com/report/sigs.k8s.io/node-feature-discovery)

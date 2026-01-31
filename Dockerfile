@@ -11,6 +11,9 @@ COPY api/nfd/go.mod api/nfd/go.sum /go/node-feature-discovery/api/nfd/
 
 WORKDIR /go/node-feature-discovery
 
+# Use Chinese Go proxy to avoid timeout issues
+ENV GOPROXY=https://goproxy.cn,direct
+
 RUN --mount=type=cache,target=/go/pkg/mod/ \
     go mod download
 
